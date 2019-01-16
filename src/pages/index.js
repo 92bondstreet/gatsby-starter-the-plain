@@ -4,39 +4,41 @@ import { Link, graphql } from 'gatsby'
 import Bio from '../components/Bio'
 import Layout from '../components/Layout'
 import SEO from '../components/seo'
-import { rhythm } from '../utils/typography'
 
 class BlogIndex extends React.Component {
   render() {
     const { data } = this.props
-    const siteTitle = data.site.siteMetadata.title
+    const {author, title} = data.site.siteMetadata;
     const posts = data.allMarkdownRemark.edges
 
     return (
-      <Layout location={this.props.location} title={siteTitle}>
+      <Layout author={author} location={this.props.location} title={title}>
         <SEO
           title="All posts"
           keywords={[`blog`, `gatsby`, `javascript`, `react`]}
         />
-        <Bio />
+        <section>
+          <ul>
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
           return (
-            <div key={node.fields.slug}>
-              <h3
-                style={{
-                  marginBottom: rhythm(1 / 4),
-                }}
-              >
+            <li key={node.fields.slug}>
+              <div className="post-date code">
+                <span>8 MIN</span>
+              </div>
+              <div className="title">
                 <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
-                  {title}
-                </Link>
-              </h3>
-              <small>{node.frontmatter.date}</small>
-              <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
-            </div>
+                    {title}
+                  </Link>
+              </div>
+            </li>
           )
         })}
+      </ul>
+      <div className="divider"></div>
+    <Bio />
+
+        </section>
       </Layout>
     )
   }
@@ -48,6 +50,7 @@ export const pageQuery = graphql`
   query {
     site {
       siteMetadata {
+        author
         title
       }
     }

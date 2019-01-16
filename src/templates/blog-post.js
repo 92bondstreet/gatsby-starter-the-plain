@@ -4,34 +4,27 @@ import { Link, graphql } from 'gatsby'
 import Bio from '../components/Bio'
 import Layout from '../components/Layout'
 import SEO from '../components/seo'
-import { rhythm, scale } from '../utils/typography'
 
 class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.markdownRemark
-    const siteTitle = this.props.data.site.siteMetadata.title
+    const {author, title} = this.props.data.site.siteMetadata
     const { previous, next } = this.props.pageContext
 
     return (
-      <Layout location={this.props.location} title={siteTitle}>
+      <Layout author={author} location={this.props.location} title={title}>
         <SEO title={post.frontmatter.title} description={post.excerpt} />
-        <h1>{post.frontmatter.title}</h1>
-        <p
-          style={{
-            ...scale(-1 / 5),
-            display: `block`,
-            marginBottom: rhythm(1),
-            marginTop: rhythm(-1),
-          }}
-        >
-          {post.frontmatter.date}
-        </p>
+          <article>
+
+            <div className="center">
+              <h1>{post.frontmatter.title}</h1>
+              <time className="code">{post.frontmatter.date}</time>
+          </div>
+          <div className="divider"></div>
+
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
-        <hr
-          style={{
-            marginBottom: rhythm(1),
-          }}
-        />
+
+          <div className="divider"></div>
         <Bio />
 
         <ul
@@ -58,6 +51,7 @@ class BlogPostTemplate extends React.Component {
             )}
           </li>
         </ul>
+      </article>
       </Layout>
     )
   }
@@ -69,8 +63,8 @@ export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
     site {
       siteMetadata {
-        title
         author
+        title
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {

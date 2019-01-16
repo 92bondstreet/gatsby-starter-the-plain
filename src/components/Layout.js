@@ -1,29 +1,20 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-import { rhythm, scale } from '../utils/typography'
+import './Layout.scss'
+import './syntax.scss'
+
 
 class Layout extends React.Component {
   render() {
-    const { location, title, children } = this.props
+    const { author, location, title, children } = this.props
     const rootPath = `${__PATH_PREFIX__}/`
     let header
 
     if (location.pathname === rootPath) {
       header = (
-        <h1
-          style={{
-            ...scale(1.5),
-            marginBottom: rhythm(1.5),
-            marginTop: 0,
-          }}
-        >
+        <h1>
           <Link
-            style={{
-              boxShadow: `none`,
-              textDecoration: `none`,
-              color: `inherit`,
-            }}
             to={`/`}
           >
             {title}
@@ -56,17 +47,14 @@ class Layout extends React.Component {
         style={{
           marginLeft: `auto`,
           marginRight: `auto`,
-          maxWidth: rhythm(24),
-          padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
-        }}
+                }}
       >
         {header}
         {children}
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
+        <div className="footer">
+          <span className="block">&copy; {new Date().getFullYear()} {author}</span>
+          <span className="block"><small>&lt;/&gt; Built with <a href="https://www.gatsbyjs.org">Gatsby</a> and <a href="https://github.com/heiswayi/the-plain">The Plain theme</a>.</small></span>
+        </div>
       </div>
     )
   }

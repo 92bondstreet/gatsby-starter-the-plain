@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `Gatsby - The Plain`,
     author: `Kyle Mathews`,
-    description: `A starter blog demonstrating what Gatsby can do.`,
+    description: `A starter blog based on The Plain theme and now`,
     siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
     social: {
       twitter: `kylemathews`,
@@ -69,9 +69,12 @@ module.exports = {
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
     {
-      resolve: `gatsby-plugin-typography`,
+      resolve: `gatsby-plugin-sass`,
       options: {
-        pathToConfigModule: `src/utils/typography`,
+        precision: 8,
+        includePaths: [
+          require('path').resolve(__dirname, 'node_modules')
+        ],
       },
     },
   ],
