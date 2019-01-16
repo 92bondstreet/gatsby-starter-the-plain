@@ -13,7 +13,7 @@
   </strong>
 </p>
 
-## 🚀 Quick start
+## 🕹️ Quick start
 
 ```sh
 ❯ gatsby new my-blog-starter https://github.com/92bondstreet/gatsby-starter-the-plain
@@ -30,20 +30,21 @@
 
 - [X] 🔑 Update the [siteMetadata](./gatsby-config.js)
 - [X] 👩‍🔧 Update or Remove the [Bio](./src/components/Bio.js) paragraph (`p`)
-- [X] 🦶🏽 Update or Remove the [Footer](./src/components/Layout.js) (`<div className="footer">`)
+- [X] 🦶 Update or Remove the [Footer](./src/components/Layout.js) (`<div className="footer">`)
 - [X] 🤖 Update the [robots.txt](./static/robots.txt)
 - [X] 📃 Create the new (Markdown) [content](./content)
 
 ## 📱 Features
 
 - [X] ⌚ reading time
+- [X] ⌚ post sorted by title
 
-## 💙 Inspiration
+## 🌱 Inspiration
 
 * [Gatsby's blog starter](https://github.com/gatsbyjs/gatsby-starter-blog#-whats-inside)
 * [The Plain by @heiswayi](https://github.com/heiswayi/the-plain)
 
-## 💫 Deploy
+## 🚀 Deploy
 
 ![Deploy to Now](https://badgen.net/badge/%E2%96%B2%20Deploy%20to%20Now/$%20now%2092bondstreet%2Fgatsby-starter-the-plain/black)
 
