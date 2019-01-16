@@ -28,8 +28,7 @@ function Bio() {
               }}
             />
           <p className="bio">
-              Written by <strong>{author}</strong> who lives and works in San
-              Francisco building useful things.
+              Original starter written by <strong>{author}</strong>.
               {` `}
               <a href={`https://twitter.com/${social.twitter}`}>
                 You should follow him on Twitter

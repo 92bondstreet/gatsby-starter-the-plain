@@ -2,8 +2,8 @@ module.exports = {
   siteMetadata: {
     title: `Gatsby - The Plain`,
     author: `Kyle Mathews`,
-    description: `A starter blog based on The Plain theme and now`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
+    description: `A starter blog based on The Plain (jekyll) theme and deployed with now`,
+    siteUrl: `https://gatsby-starter-the-plain.now.sh`,
     social: {
       twitter: `kylemathews`,
     },
