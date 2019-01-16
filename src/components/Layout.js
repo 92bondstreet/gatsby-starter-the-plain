@@ -53,7 +53,7 @@ class Layout extends React.Component {
         {children}
         <div className="footer">
           <span className="block">&copy; {new Date().getFullYear()} {author}</span>
-          <span className="block"><small>&lt;/&gt; Built with <a href="https://www.gatsbyjs.org">Gatsby</a> and <a href="https://github.com/heiswayi/the-plain">The Plain theme</a>.</small></span>
+          <span className="block">&lt;/&gt; Built with <a href="https://www.gatsbyjs.org">Gatsby</a> and <a href="https://github.com/heiswayi/the-plain">The Plain theme</a>.</span>
         </div>
       </div>
     )

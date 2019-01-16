@@ -19,6 +19,7 @@ function Bio() {
               alt={author}
               style={{
                 marginBottom: 0,
+                marginRight: '0.875rem',
                 minWidth: 50,
                 borderRadius: `100%`,
               }}
@@ -26,7 +27,7 @@ function Bio() {
                 borderRadius: `50%`,
               }}
             />
-            <p>
+          <p className="bio">
               Written by <strong>{author}</strong> who lives and works in San
               Francisco building useful things.
               {` `}
