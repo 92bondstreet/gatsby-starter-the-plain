@@ -24,7 +24,7 @@ class BlogIndex extends React.Component {
           return (
             <li key={node.fields.slug}>
               <div className="post-date code">
-                <span>8 MIN</span>
+                <span>{node.fields.readingTime}</span>
               </div>
               <div className="title">
                 <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
@@ -59,6 +59,7 @@ export const pageQuery = graphql`
         node {
           excerpt
           fields {
+            readingTime
             slug
           }
           frontmatter {
